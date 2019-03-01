@@ -9,22 +9,97 @@
 ## スキル
 
 ※基本的にすべて実業務で数ヶ月以上使用した技術だけを列挙しています。
+|
 
 ### 言語
 
-Rust | Kotlin | Scala | Java | Go | Elixir | Ruby | Python | PHP | Perl | JavaScript | TypeScript | VC++ | C# | Delphi | Objective-C
+Rust | Kotlin | Scala | Java | Go | Elixir | Ruby | Python | PHP | Perl | JavaScript | TypeScript | VC++ | C# | VB.NET | Delphi | Objective-C | Action Script
 
-### RDB
+### フレームワーク等
 
-MySQL | PostgreSQL | Oracle | SQL Server
+Iron
+Vert.x
+Finch
+Cats
+Shapeless
+Scaldi
+PlayFramework
+Slick
+ScalideJDBC
+Spec2
+Struts
+Revel
+Phoenix
+Ruby on Rails
+Flask
+Django
+Zend Framework
+CodeIgniter
+CakePHP
+Ethna
+Symfony
+Vue.js
+
+### RDB/NoSQL
+
+MySQL | PostgreSQL | Greenplum | Oracle | SQL Server | Greenplum
+
+Memcached
+Tokyo Tyrant
+Kyoto Tycoon
+
 
 ### クラウド
 
 #### AWS
 
-VPC ｜ S3 ｜ Cloud Front ｜ API Gateway ｜ Lambda ｜ ELB ｜ EC2 ｜ ECS ｜ Beanstalk ｜ Route53 ｜ IAM ｜ Cognito ｜ Elasticsearch ｜ RDS(MySQL/PostgreSQL) ｜ Aurora ｜ DynamoDB ｜ ElastiCache(Redis) ｜ Kinesis ｜ Kinesis firehose ｜ SQS ｜ SNS ｜ SES ｜ Redshift ｜ EMR(Spark) ｜ Cloud Formation ｜ Cloud Watch
+VPC | S3 | Cloud Front | API Gateway | Lambda | ELB | EC2 | ECS | Beanstalk | Route53 | IAM | Cognito | Elasticsearch Service | RDS(MySQL/PostgreSQL) | Aurora | DynamoDB | ElastiCache(Redis) | Kinesis | Kinesis firehose | SQS | SNS | SES | Redshift | EMR(Spark) | Cloud Formation | Cloud Watch
 
 
 #### GCP
 
-VPC ｜ GCS ｜ Cloud Functions ｜ GCE ｜ GKE(Kubernetes) ｜ GAE/SE(Standard Environment) ｜ GAE/FE(Flexible Environment) ｜ IAM ｜ Cloud SQL ｜ Cloud Memorystore(Redis) ｜ Cloud Pub/Sub ｜ Cloud NAT ｜ Cloud Armor ｜ BigQuery ｜ Dataflow(Apache Beam) ｜ Composer(Airflow) ｜ ML Engine ｜ Deployment Manager ｜ Cloud Build ｜ Stackdriver Logging ｜ Stackdriver Monitoring
+VPC | GCS | Cloud Functions | GCE | GKE(Kubernetes) | GAE/SE(Standard Environment) | GAE/FE(Flexible Environment) | IAM | Cloud SQL | Cloud Memorystore(Redis) | Cloud Pub/Sub | Cloud NAT | Cloud Armor | BigQuery | Dataflow(Apache Beam) | Composer(Airflow) | ML Engine | Datalab | Deployment Manager | Cloud Build | Stackdriver Logging | Stackdriver Monitoring
+
+### SaaS/PaaS
+
+GitHub
+BitBucket(Stash)
+CircleCI
+Wercker
+DataDog
+Sentry
+NewRelic
+TreasureData
+DeployGate
+TestFlight
+
+### その他
+
+Docker
+Jenkins
+Fluentd
+Capistrano
+Chef
+Gulp
+nginx
+unicorn
+Apache
+Pug
+SASS
+Mecab
+Zabbix
+Elasticsearch
+Kibana
+RabbitMQ
+LDAP
+LVS
+BIND
+DHCP
+IIS
+Active Directory
+DirectShow
+Sharepoint Server
+Exchage Server
+
+
+

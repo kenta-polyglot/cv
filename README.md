@@ -6,9 +6,9 @@
 |----|----|
 |名前|勝又 健太|
 |生息地|東京都 渋谷区|
-|Twitter|[@poly_soft](https://twitter.com/poly_soft) (フォロワー7,000)|
-|Qiita|[@poly_soft](https://qiita.com/poly_soft) (Contribution数11,000)|
-|Youtube|[雑食系エンジニアTV](https://www.youtube.com/channel/UC_HLK-ksslL-Z_2wiIZDlMg) (チャンネル登録者数8,700)|
+|Twitter|[@poly_soft](https://twitter.com/poly_soft) (フォロワー7,000超)|
+|Qiita|[@poly_soft](https://qiita.com/poly_soft) (Contribution数11,000超)|
+|Youtube|[雑食系エンジニアTV](https://www.youtube.com/channel/UC_HLK-ksslL-Z_2wiIZDlMg) (チャンネル登録者数8,000超)|
 |ポートフォリオ|[kenta-aktsk](https://github.com/kenta-aktsk) (ほぼElixirのみ)|
 |英語力|TOEIC820点|
 |bokete力|[星13,000超](https://bokete.jp/user/polysoft)|

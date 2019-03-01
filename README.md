@@ -17,37 +17,11 @@ Rust | Kotlin | Scala | Java | Go | Elixir | Ruby | Python | PHP | Perl | JavaSc
 
 ### フレームワーク等
 
-Iron
-Vert.x
-Finch
-Cats
-Shapeless
-Scaldi
-PlayFramework
-Slick
-ScalideJDBC
-Spec2
-Struts
-Revel
-Phoenix
-Ruby on Rails
-Flask
-Django
-Zend Framework
-CodeIgniter
-CakePHP
-Ethna
-Symfony
-Vue.js
+Iron | Vert.x | Finch | Cats | Shapeless | Scaldi | PlayFramework | Slick | ScalideJDBC | Spec2 | Struts | Revel | Phoenix | Ruby on Rails | Flask | Django | Zend Framework | CodeIgniter | CakePHP | Ethna | Symfony | jQuery | Vue.js | MFC | .NET Framerowk
 
 ### RDB/NoSQL
 
-MySQL | PostgreSQL | Greenplum | Oracle | SQL Server | Greenplum
-
-Memcached
-Tokyo Tyrant
-Kyoto Tycoon
-
+MySQL | PostgreSQL | Greenplum | Oracle | SQL Server | Greenplum | Redis | Memcached | Tokyo Tyrant | Kyoto Tycoon
 
 ### クラウド
 
@@ -62,44 +36,8 @@ VPC | GCS | Cloud Functions | GCE | GKE(Kubernetes) | GAE/SE(Standard Environmen
 
 ### SaaS/PaaS
 
-GitHub
-BitBucket(Stash)
-CircleCI
-Wercker
-DataDog
-Sentry
-NewRelic
-TreasureData
-DeployGate
-TestFlight
+GitHub | BitBucket(Stash) | CircleCI | Wercker | DataDog | Sentry | NewRelic | TreasureData | DeployGate | TestFlight
 
 ### その他
 
-Docker
-Jenkins
-Fluentd
-Capistrano
-Chef
-Gulp
-nginx
-unicorn
-Apache
-Pug
-SASS
-Mecab
-Zabbix
-Elasticsearch
-Kibana
-RabbitMQ
-LDAP
-LVS
-BIND
-DHCP
-IIS
-Active Directory
-DirectShow
-Sharepoint Server
-Exchage Server
-
-
-
+Docker | Xen | Jenkins | Fluentd | Capistrano | Chef | nginx | unicorn | Apache | Tomcat | Gulp | Webpack | Pug | SASS | Mecab | Zabbix | munin | Elasticsearch | Kibana | RabbitMQ | LDAP | LVS | BIND | DHCP | IIS | Active Directory | DirectShow | Sharepoint Server | Exchage Server

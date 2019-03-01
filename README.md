@@ -57,7 +57,7 @@ GitHub | BitBucket(Stash) | CircleCI | Wercker | DataDog | Sentry | NewRelic | T
 
 Docker | Xen | Jenkins | Fluentd | Capistrano | Chef | nginx | unicorn | Apache | Tomcat | Gulp | Webpack | Pug | SASS | Mecab | Zabbix | munin | Elasticsearch | Kibana | RabbitMQ | LDAP | LVS | BIND | DHCP | IIS | Active Directory | DirectShow | Sharepoint Server | Exchage Server
 
-## 業務経歴
+## 主な業務経歴
 
 ### 【Go/Python/GCP/MLOps】機械学習系システムの開発ワークフロー整備/API開発/インフラ構築 (2018年〜)
 
@@ -178,7 +178,7 @@ DirectShowとC#を使用して、動画キャプチャソフトのほぼ全て�
 #### 発揮したバリュー
 Linux環境もJavaもほぼ初体験であったが、書籍やネット上の情報、およびチームリーダーのサポートを得て迅速にキャッチアップ。この時点ではチームリーダーも知らなかった「DI」の概念を調査および理解してシステムに落としこむ等、ここでも学習能力の高さを発揮。
 
-###【VC++/MFC】世界初のマンガ作成用グラフィックソフトの開発 (遥か昔)
+### 【VC++/MFC】世界初のマンガ作成用グラフィックソフトの開発 (遥か昔)
 
 #### プロジェクト概要
 当時としては世界初の、マンガ作成用グラフィックソフトの新規開発を担当。

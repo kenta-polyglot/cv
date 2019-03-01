@@ -14,11 +14,11 @@
 
 ## 概要
 
-- クラウドアーキテクチャ設計、クラウドインフラ構築管理、基盤コード開発、DevOps/MLOpsが現在の専門です。
+- クラウドアーキテクチャ設計、クラウドインフラ構築管理、基盤コード開発、サービスのモダン化、DevOps/MLOpsが現在の専門です。
 
 - バックエンドの多種多様な言語・DB・フレームワークを用いた豊富な開発経験があり、AWSとGCPの様々なマネージドサービスに精通しています。
 
-- 小規模〜中規模サービスの新規開発フェーズにおいて非常に有用なタイプのエンジニアだと思います。
+- 小規模〜中規模サービスの新規開発フェーズやサービスのリプレイスフェーズにおいて非常に有用なタイプのエンジニアだと思います。
 
 - 「手を動かすエンジニア」としての業務から「開発コンサル」「技術コンサル」「技術顧問」まで幅広く対応可能です。
 
@@ -57,6 +57,33 @@ GitHub | BitBucket(Stash) | CircleCI | Wercker | DataDog | Sentry | NewRelic | T
 
 Docker | Xen | Jenkins | Fluentd | Capistrano | Chef | nginx | unicorn | Apache | Tomcat | Gulp | Webpack | Pug | SASS | Mecab | Zabbix | munin | Elasticsearch | Kibana | RabbitMQ | LDAP | LVS | BIND | DHCP | IIS | Active Directory | DirectShow | Sharepoint Server | Exchage Server
 
+## バリューを発揮しやすい業務
+
+- クラウドアーキテクチャ設計
+- クラウドインフラ構築管理
+- 基盤コード開発
+- パッケージマネージャの導入
+- LinterやFormatterの導入
+- 単体テストや統合テストの導入
+- local/dev/stg/prod環境の適切な切り分け
+- Gitブランチモデルの適切な定義
+- アプリケーションのマイクロサービス化
+- サーバーレスアーキテクチャの導入
+- 認証サービスの導入
+- メッセージングサービスの導入
+- 全文検索サービスの導入
+- CDNの導入
+- CIサービスの導入
+- コンテナ化(Docker化)
+- インフラのコード化
+- オートスケールの設定
+- デプロイの自動化
+- データベースマイグレーションの自動化
+- バッチジョブのフロー制御
+- クラウドの権限管理
+- 監視ダッシュボードの導入
+- ログ収集と分析基盤の構築
+
 ## 主な業務経歴
 
 ### 機械学習系システムの開発ワークフロー整備/API開発/インフラ構築【Go/Python/GCP/MLOps】(2018年〜)
@@ -69,8 +96,8 @@ Docker | Xen | Jenkins | Fluentd | Capistrano | Chef | nginx | unicorn | Apache 
 - GKE + Go + gRPC + Pythonの組み合わせによるマイクロサービス構成の調査と開発。
 - Go + OpenAPI3.0 + go-swaggerによるREST API定義とモデルの自動生成によるAPI開発。
 - Gitリポジトリのブランチモデルの定義およびBitbucketを使用したレビュー＆デプロイフローの整備。
-- Google Cloud Source RepositoryとGoogle Cloud Builderを使用したCI/CD環境の構築
-- Google Cloud DatalabとGoogle ML EngineとGoogle Composer(Airflow)を使用した機械学習ワークフローの構築。
+- Google Cloud Source RepositoryとGoogle Cloud Buildを使用したCI/CD環境の構築
+- Google Cloud DatalabとGoogle ML EngineとGoogle Cloud Composer(Airflow)を使用した機械学習ワークフローの構築。
 - Google Cloud Dataflow(Apache Beam)を使用したビッグデータ分散処理に関する調査と開発。
 - Google Cloud Composer(Airflow)を使用したジョブフロー制御基盤の構築。
 - Google Cloud Memorystore(Redis)の導入。
@@ -82,7 +109,7 @@ Docker | Xen | Jenkins | Fluentd | Capistrano | Chef | nginx | unicorn | Apache 
 - GCEを用いたNAT Gatewayの構築とルーティング設定。
 - GCEを用いた踏み台サーバの構築。
 - Google Cloud Deployment Managerとgcloudを使用したインフラのコード化。
-- Google Cloud Functionsを使用したDBのマイグレーション。
+- Google Cloud Functionsを使用したDBの自動マイグレーション機能の導入。
 - Stackdriver Monitoringを使用した監視ダッシュボードの構築。
 
 【発揮したバリュー】「Githubが使えない」「サードパーティのCIツールが使えない」「ローカル環境から外部ネットワークへのSSH接続が禁止されている」「インフラに対する外部からのアクセス元IPの制限が非常に厳しい」「GCPのプロジェクトを自由に作成出来ない」等、様々な制約条件のある中での業務であったが、幅広い知識とスキルと速習能力を活かし、「モダンな開発ワークフローのスムーズな導入」および「少人数で管理可能な省力化された機械学習インフラ構成」を実現してチームに大きく貢献。

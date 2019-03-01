@@ -37,7 +37,7 @@ Iron | Vert.x | Finch | Cats | Shapeless | Scaldi | PlayFramework | Slick | Scal
 
 ### RDB/NoSQL
 
-MySQL | PostgreSQL | Greenplum | Oracle | SQL Server | Greenplum | Redis | Memcached | Tokyo Tyrant | Kyoto Tycoon
+MySQL | PostgreSQL | Greenplum | Oracle | SQL Server | Redis | Memcached | Tokyo Tyrant | Kyoto Tycoon
 
 ### クラウド
 

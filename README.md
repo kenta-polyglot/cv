@@ -93,15 +93,16 @@ Docker | Xen | Jenkins | Fluentd | Capistrano | Chef | nginx | unicorn | Apache 
 
 【担当業務】複数のマイクロサービスにおける共通の開発ワークフロー整備やサービス全体のアーキテクチャ設計、WebAPIと機械学習APIの連携、GCP上のインフラ構築等多種多様なタスクを担当。具体的には下記。
 
+- Istio導入によるサービスメッシュ化のメリットの調査。
 - Knative+Istioを使用したサーバーレスプラットフォーム環境の調査。
 - GKE + Go + gRPC + Pythonの組み合わせによるマイクロサービス構成の調査と開発。
 - Go + OpenAPI3.0 + go-swaggerによるREST API定義とモデルの自動生成によるAPI開発。
 - Gitリポジトリのブランチモデルの定義およびBitbucketを使用したレビュー＆デプロイフローの整備。
-- Google Cloud Source RepositoryとGoogle Cloud Buildを使用したCI/CD環境の構築
-- Google Cloud DatalabとGoogle ML EngineとGoogle Cloud Composer(Airflow)を使用した機械学習ワークフローの構築。
-- Google Cloud Dataflow(Apache Beam)を使用したビッグデータ分散処理に関する調査と開発。
-- Google Cloud Composer(Airflow)を使用したジョブフロー制御基盤の構築。
-- Google Cloud Memorystore(Redis)の導入。
+- Cloud Source RepositoryとCloud Buildを使用したCI/CD環境の構築
+- Cloud DatalabとML EngineとCloud Composer(Airflow)を使用した機械学習ワークフローの構築。
+- Cloud Dataflow(Apache Beam)を使用したビッグデータ分散処理に関する調査と開発。
+- Cloud Composer(Airflow)を使用したジョブフロー制御基盤の構築。
+- Cloud Memorystore(Redis)の導入。
 - Pipenvの導入によるPython開発環境の共通化と環境毎の差異の解消。
 - flake8とblackの導入によるコードフォーマットの統一とコードレビューの効率化。
 - GAE/FEとGKE(Kubernetes)を用いたBitbucket連携サーバの開発。
@@ -109,11 +110,11 @@ Docker | Xen | Jenkins | Fluentd | Capistrano | Chef | nginx | unicorn | Apache 
 - VPCとGAEのファイアウォール設定。
 - GCEを用いたNAT Gatewayの構築とルーティング設定。
 - GCEを用いた踏み台サーバの構築。
-- Google Cloud Deployment Managerとgcloudを使用したインフラのコード化。
-- Google Cloud Functionsを使用したDBの自動マイグレーション機能の導入。
+- Cloud Deployment Managerとgcloudを使用したインフラのコード化。
+- Cloud Functionsを使用したDBの自動マイグレーション機能の導入。
 - Stackdriver Monitoringを使用した監視ダッシュボードの構築。
 
-【発揮したバリュー】「Githubが使えない」「サードパーティのCIツールが使えない」「ローカル環境から外部ネットワークへのSSH接続が禁止されている」「インフラに対する外部からのアクセス元IPの制限が非常に厳しい」「GCPのプロジェクトを自由に作成出来ない」等、様々な制約条件のある中での業務であったが、幅広い知識とスキルと速習能力を活かし、「モダンな開発ワークフローのスムーズな導入」および「少人数で管理可能な省力化された機械学習インフラ構成」を実現してチームに大きく貢献。
+【発揮したバリュー】「GitHubが使えない」「サードパーティのCIツールが使えない」「ローカル環境から外部ネットワークへのSSH接続が禁止されている」「インフラに対する外部からのアクセス元IPの制限が非常に厳しい」「GCPのプロジェクトを自由に作成出来ない」等、様々な制約条件のある中での業務であったが、幅広い知識とスキルと速習能力を活かし、「モダンな開発ワークフローのスムーズな導入」および「少人数で管理可能な省力化された機械学習インフラ構成」を実現してチームに大きく貢献。
 
 ### 汎用レコメンダシステムの開発【Kotlin/Vert.x/TypeScript/Vue.js】(2017年〜2018年)
 

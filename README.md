@@ -88,7 +88,7 @@ Docker | Xen | Jenkins | Fluentd | Capistrano | Chef | nginx | unicorn | Apache 
 
 ## 主な業務経歴
 
-### 機械学習系システムの開発ワークフロー整備/API開発/インフラ構築【Go/Python/GCP/MLOps】(2018年〜)
+### 機械学習系システムの開発ワークフロー整備/API開発/インフラ構築【Go/Python/GCP/MLOps】(2018年〜2019年)
 
 【プロジェクト概要】国内最大級の情報サイトを運営している企業様の機械学習チームにおいて、開発ワークフローの整備やクラウドインフラの構築管理等、いわゆる「DevOps」「MLOps」系の業務を担当。
 

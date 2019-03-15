@@ -26,7 +26,7 @@
 
 ## スキル
 
-- 基本的にすべて実業務で数ヶ月以上使用した技術だけを列挙しています。
+- 基本的にすべて実業務で使用した技術だけを列挙しています。
 
 ### 言語
 
@@ -44,7 +44,7 @@ MySQL | PostgreSQL | Greenplum | Oracle | SQL Server | Redis | Memcached | Tokyo
 
 #### AWS
 
-VPC | S3 | Cloud Front | API Gateway | Lambda | ELB | EC2 | ECS | Beanstalk | Route53 | IAM | Cognito | Elasticsearch Service | RDS(MySQL|PostgreSQL) | Aurora | DynamoDB | ElastiCache(Redis) | Kinesis | Kinesis firehose | SQS | SNS | SES | Redshift | EMR(Spark) | Cloud Formation | Cloud Watch
+VPC | S3 | Cloud Front | API Gateway | Lambda | ELB | EC2 | ECS | Beanstalk | EKS(Kubernetes) | Route53 | IAM | Cognito | Elasticsearch Service | RDS(MySQL|PostgreSQL) | Aurora | DynamoDB | ElastiCache(Redis) | Kinesis | Kinesis firehose | SQS | SNS | SES | Redshift | EMR(Spark) | Cloud Formation | Cloud Watch
 
 
 #### GCP
@@ -57,7 +57,7 @@ GitHub | BitBucket(Stash) | CircleCI | Wercker | DataDog | Sentry | NewRelic | T
 
 ### その他
 
-Docker | Xen | Jenkins | Fluentd | Capistrano | Chef | nginx | unicorn | Apache | Tomcat | Gulp | Webpack | Pug | SASS | Mecab | Zabbix | munin | Elasticsearch | Kibana | RabbitMQ | LDAP | LVS | BIND | DHCP | IIS | Active Directory | DirectShow | Sharepoint Server | Exchage Server
+Terraform | Docker | Xen | Jenkins | Fluentd | Capistrano | Chef | nginx | unicorn | Apache | Tomcat | Gulp | Webpack | Pug | SASS | Mecab | Zabbix | munin | Elasticsearch | Kibana | RabbitMQ | LDAP | LVS | BIND | DHCP | IIS | Active Directory | DirectShow | Sharepoint Server | Exchage Server
 
 ## バリューを発揮しやすい業務
 

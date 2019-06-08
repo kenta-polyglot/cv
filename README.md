@@ -7,7 +7,7 @@
 |名前|勝又 健太|
 |生息地|東京都 渋谷区|
 |オンラインサロン|[雑食系エンジニアサロン](https://kentakatsumata.net/archives/10) (参加者数1,100超)|
-|Twitter|[@poly_soft](https://twitter.com/poly_soft) (フォロワー11,000超)|
+|Twitter|[@poly_soft](https://twitter.com/poly_soft) (フォロワー12,000超)|
 |Qiita|[@poly_soft](https://qiita.com/poly_soft) (Contribution数12,000超)|
 |Youtube|[雑食系エンジニアTV](https://www.youtube.com/channel/UC_HLK-ksslL-Z_2wiIZDlMg) (チャンネル登録者数19,000超)|
 |ポートフォリオ|[kenta-aktsk](https://github.com/kenta-aktsk) (ほぼElixirのみ)|

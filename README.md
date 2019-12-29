@@ -54,11 +54,11 @@ VPC | GCS | Cloud Functions | GCE | GKE(Kubernetes) | GAE/SE(Standard Environmen
 
 ### SaaS/PaaS
 
-GitHub | BitBucket(Stash) | CircleCI | Wercker | DataDog | Sentry | NewRelic | TreasureData | DeployGate | TestFlight
+GitHub | GitHub Actions | BitBucket(Stash) | CircleCI | Wercker | DataDog | Sentry | NewRelic | TreasureData | DeployGate | TestFlight
 
 ### その他
 
-Terraform | Docker | Xen | Jenkins | Fluentd | Capistrano | Chef | nginx | unicorn | Apache | Tomcat | Gulp | Webpack | Pug | SASS | Mecab | Zabbix | munin | Elasticsearch | Kibana | RabbitMQ | LDAP | LVS | BIND | DHCP | IIS | Active Directory | DirectShow | Sharepoint Server | Exchage Server
+Terraform | Spinnaker | Envoy | Docker | Xen | Jenkins | Fluentd | Capistrano | Chef | nginx | unicorn | Apache | Tomcat | Gulp | Webpack | Pug | SASS | Mecab | Zabbix | munin | Elasticsearch | Kibana | RabbitMQ | LDAP | LVS | BIND | DHCP | IIS | Active Directory | DirectShow | Sharepoint Server | Exchage Server
 
 ## バリューを発揮しやすい業務
 
@@ -88,6 +88,23 @@ Terraform | Docker | Xen | Jenkins | Fluentd | Capistrano | Chef | nginx | unico
 - ログ収集と分析基盤の構築
 
 ## 主な業務経歴
+
+### ブロックチェーン系BtoBサービスのインフラ構築/DevOps基盤構築【Go/EKS/Envoy/Spinnaker/Terraform/AWS】(2019年)
+
+【プロジェクト概要】ブロックチェーン系BtoBサービスの新規開発チームにおいて、インフラの構築/DevOps基盤構築、検証用アプリケーションの開発作業等を担当
+
+【担当業務】Terraformによるインフラのコード化、SpinnakerによるCDパイプラインのコード化、Envoyによるサイドカーパターンの構築、KubernetesのManifest作成、各種自動化スクリプトの作成等を担当。具体的には下記。
+
+- Terraformによるインフラのコード化(VPC/EKS/Aurora/Elasticache等)
+- EKSを使用したマイクロサービス基盤の構築
+- Envoyを使用したサイドカーパターンによるマイクロサービスアーキテクチャの構築
+- SpinnakerのPipelineとArtifacts機能を使用したCDパイプラインのコード化
+- KubernetesのManifestファイル作成
+- shellcheck/hadolint/kubeval等を使用したバリデーションの実装
+- GitHub Actionsを使用したCI/CDパイプラインの構築
+- 上記の全ての機能が実装された検証用アプリケーション(Go + gRPC)の作成と本体アプリケーションへの機能の組み込み
+
+【発揮したバリュー】これまでの案件で培ったAWSやDevOpsの知見を活かし、インフラのコード化やCI/CDパイプラインの構築、各種自動化作業等に大きく貢献。Spinnakerは初体験であったがPipelineやArtifacts等の機能を速習して短期間でキャッチアップ。Envoyを使用したサイドカーパターンも初体験であったがこちらも速習して短期間で対応。
 
 ### ニュース配信系サービスのアーキテクチャ設計/インフラ構築/API開発/DevOps基盤構築【Go/Python/EKS/Terraform/AWS】(2019年)
 

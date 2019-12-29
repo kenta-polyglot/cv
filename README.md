@@ -95,7 +95,7 @@ Terraform | Spinnaker | Envoy | Docker | Xen | Jenkins | Fluentd | Capistrano | 
 
 【担当業務】Terraformによるインフラのコード化、SpinnakerによるCDパイプラインのコード化、Envoyによるサイドカーパターンの構築、KubernetesのManifest作成、各種自動化スクリプトの作成等を担当。具体的には下記。
 
-- Terraformによるインフラのコード化(VPC/EKS/Aurora/Elasticache等)
+- Terraformによるインフラのコード化(VPC/EKS/Aurora/ElastiCache等)
 - EKSを使用したマイクロサービス基盤の構築
 - Envoyを使用したサイドカーパターンによるマイクロサービスアーキテクチャの構築
 - SpinnakerのPipelineとArtifacts機能を使用したCDパイプラインのコード化

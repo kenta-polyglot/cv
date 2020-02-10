@@ -9,8 +9,8 @@
 |オンラインサロン|[雑食系エンジニアサロン](https://kentakatsumata.net/archives/10) (参加者数1,600超)|
 |Twitter|[@poly_soft](https://twitter.com/poly_soft) (フォロワー20,000超)|
 |Qiita|[@poly_soft](https://qiita.com/poly_soft) (Contribution数15,000超)|
-|Youtube|[雑食系エンジニアTV](https://www.youtube.com/channel/UC_HLK-ksslL-Z_2wiIZDlMg) (チャンネル登録者数39,000超)<br/>|
-|Youtube|[雑食系ビジネス大学](http://www.youtube.com/channel/UC2PpsPaCBhYTWCj40wVJRyw) (チャンネル登録者数2,000超)|
+|Youtube|[雑食系エンジニアTV](https://www.youtube.com/channel/UC_HLK-ksslL-Z_2wiIZDlMg) (チャンネル登録者数39,000超)<br/>[雑食系ビジネス大学](http://www.youtube.com/channel/UC2PpsPaCBhYTWCj40wVJRyw) (チャンネル登録者数2,000超)|
+|Youtube||
 |ポートフォリオ|[kenta-aktsk](https://github.com/kenta-aktsk) (ほぼElixirのみ)|
 |小説|[鬼喰い](https://ncode.syosetu.com/n1075ct/)|
 |英語力|TOEIC820点|

@@ -50,7 +50,7 @@ VPC | S3 | Cloud Front | API Gateway | Lambda | ELB | EC2 | ECS | Beanstalk | EK
 
 #### GCP
 
-VPC | GCS | Cloud Functions | GCE | GKE(Kubernetes) | GAE/SE(Standard Environment) | GAE/FE(Flexible Environment) | IAM | Cloud SQL | Cloud Memorystore(Redis) | Cloud Pub/Sub | Cloud NAT | Cloud Armor | BigQuery | Dataflow(Apache Beam) | Composer(Airflow) | ML Engine | Datalab | Deployment Manager | Cloud Build | Stackdriver Logging | Stackdriver Monitoring
+VPC | GCS | Cloud Functions | GCE | GKE(Kubernetes) | GAE/SE(Standard Environment) | GAE/FE(Flexible Environment) | IAM | Cloud SQL | Cloud Memorystore(Redis) | Cloud Pub/Sub | Cloud NAT | Cloud Armor | BigQuery | Dataflow(Apache Beam) | Composer(Airflow) | ML Engine | Datalab | Deployment Manager | Cloud Build | Cloud Source Repository | Stackdriver Logging | Stackdriver Monitoring
 
 ### SaaS/PaaS
 

@@ -35,7 +35,7 @@ Rust | Kotlin | Scala | Java | Go | Elixir | Ruby | Python | PHP | Perl | JavaSc
 
 ### フレームワーク等
 
-Iron | Vert.x | Finch | Cats | Shapeless | Scaldi | PlayFramework | Slick | ScalideJDBC | Spec2 | Struts | Revel | Phoenix | Ruby on Rails | Flask | Django | Zend Framework | CodeIgniter | CakePHP | Ethna | Symfony | jQuery | Vue.js | MFC | .NET Framework
+Iron | Vert.x | Finch | Cats | Shapeless | Scaldi | PlayFramework | Slick | ScalikeJDBC | Spec2 | Struts | Revel | Phoenix | Ruby on Rails | Flask | Django | Zend Framework | CodeIgniter | CakePHP | Ethna | Symfony | jQuery | Vue.js | MFC | .NET Framework
 
 ### RDB/NoSQL
 

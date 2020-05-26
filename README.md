@@ -45,7 +45,7 @@ MySQL | PostgreSQL | Greenplum | Oracle | SQL Server | Redis | Memcached | Tokyo
 
 #### AWS
 
-VPC | S3 | Cloud Front | API Gateway | Lambda | ELB | EC2 | ECS | Beanstalk | EKS(Kubernetes) | Route53 | IAM | Cognito | Elasticsearch Service | RDS(MySQL|PostgreSQL) | Aurora | DynamoDB | ElastiCache(Redis) | Kinesis | Kinesis firehose | Kinesis Video Streams | SQS | SNS | SES | Redshift | EMR(Spark) | Cloud Formation | Cloud Watch | AWS Batch | SageMaker | Amazon Personalize | CloudTrail | GuardDuby | CloudHSM | Client VPN | VPC Peering | AWS Organizations
+VPC | S3 | Cloud Front | API Gateway | Lambda | ELB | EC2 | ECS | Beanstalk | EKS(Kubernetes) | Route53 | IAM | Cognito | Elasticsearch Service | RDS(MySQL|PostgreSQL) | Aurora | DynamoDB | ElastiCache(Redis) | Kinesis | Kinesis firehose | Kinesis Video Streams | SQS | SNS | SES | Redshift | EMR(Spark) | Cloud Formation | Cloud Watch | AWS Batch | SageMaker | Amazon Personalize | CloudTrail | GuardDuby | CloudHSM | KMS | Client VPN | VPC Peering | AWS Organizations
 
 
 #### GCP
@@ -98,11 +98,16 @@ Terraform | Spinnaker | Envoy | Docker | Xen | Jenkins | Fluentd | Capistrano | 
 - Terraformによるインフラのコード化(VPC/EKS/Aurora/ElastiCache等)
 - EKSを使用したマイクロサービス基盤の構築
 - Envoyを使用したサイドカーパターンによるマイクロサービスアーキテクチャの構築
-- SpinnakerのPipelineとArtifacts機能を使用したCDパイプラインのコード化
-- KubernetesのManifestファイル作成
+- Istioを使用したサービスメッシュ上でのマイクロサービスのデプロイと管理
+- SpinnakerのEKS環境での構築およびPipelineとArtifacts機能を使用したCDパイプラインのコード化
+- KubernetesのManifestファイルの作成と管理(ツールはkustomizeやsedやsigilを使用)
 - shellcheck/hadolint/kubeval等を使用したバリデーションの実装
 - GitHub ActionsとSpinnakerの連携によるGitOpsスタイルのCI/CDパイプラインの構築
-- 上記の全ての機能が実装された技術検証用アプリケーション(Go + gRPC)の作成と本体アプリケーションへの機能の組み込み
+- CloudHSMを使用した暗号化キーストアの構築
+- CloudFrontとS3による静的リソース配信基盤の構築
+- SESによるメール配信基盤の構築
+- KMSとkubesecによるキー管理基盤の構築
+- 上記の様々な機能が実装された技術検証用アプリケーション(Go + gRPC)の作成と本体アプリケーションへの機能の組み込み
 
 【発揮したバリュー】これまでの案件で培ったAWSやDevOpsの知見を活かし、インフラのコード化やCI/CDパイプラインの構築、各種自動化作業等に大きく貢献。Spinnakerは初体験であったがPipelineやArtifacts等の機能を速習して短期間でキャッチアップ。Envoyを使用したサイドカーパターンも初体験であったがこちらも速習して短期間で対応。
 

@@ -89,7 +89,7 @@ Terraform | Spinnaker | Envoy | Docker | Xen | Jenkins | Fluentd | Capistrano | 
 
 ## 主な業務経歴
 
-### ブロックチェーン系BtoBサービスのインフラ構築/DevOps基盤構築【Go/EKS/Envoy/GitOps/Spinnaker/Terraform/AWS】(2019年)
+### ブロックチェーン系BtoBサービスのインフラ構築/DevOps基盤構築【Go/EKS/Envoy/GitOps/Spinnaker/Terraform/AWS】(2019年〜2020年)
 
 【プロジェクト概要】ブロックチェーン系BtoBサービスの新規開発チームにおいて、インフラの構築/DevOps基盤構築、技術検証用アプリケーションの開発作業等を担当
 

@@ -45,7 +45,7 @@ MySQL | PostgreSQL | Greenplum | Oracle | SQL Server | Redis | Memcached | Tokyo
 
 #### AWS
 
-VPC | S3 | Cloud Front | API Gateway | Lambda | ELB | EC2 | ECS | Beanstalk | EKS(Kubernetes) | Route53 | IAM | Cognito | Elasticsearch Service | RDS(MySQL|PostgreSQL) | Aurora | DynamoDB | ElastiCache(Redis) | Kinesis | Kinesis firehose | Kinesis Video Streams | SQS | SNS | SES | Redshift | EMR(Spark) | Cloud Formation | Cloud Watch | AWS Batch | SageMaker | Amazon Personalize | CloudTrail | GuardDuby | CloudHSM | KMS | Client VPN | VPC Peering | AWS Organizations
+VPC | S3 | Cloud Front | API Gateway | Lambda | ELB | EC2 | ECS | Fargate | Beanstalk | EKS(Kubernetes) | Route53 | IAM | Cognito | Elasticsearch Service | RDS(MySQL|PostgreSQL) | Aurora | DynamoDB | ElastiCache(Redis) | Kinesis | Kinesis firehose | Kinesis Video Streams | SQS | SNS | SES | Redshift | EMR(Spark) | Cloud Formation | Cloud Watch | AWS Batch | SageMaker | Amazon Personalize | CloudTrail | GuardDuby | CloudHSM | KMS | Client VPN | VPC Peering | AWS Organizations
 
 
 #### GCP

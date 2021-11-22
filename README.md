@@ -89,6 +89,25 @@ Terraform | Spinnaker | Envoy | Docker | Xen | Jenkins | Fluentd | Capistrano | 
 
 ## 主な業務経歴
 
+### GitHubを活用したプログラミング学習サービスの開発【Nuxt.js/TypeScript/Firebase】(2021年)
+
+【プロジェクト概要】GitHubを活用して実践に近いスタイルで学習できるプログラミング問題集サービスの開発
+
+【担当業務】GitHub APIその他の技術調査、画面設計、DB設計、Nuxt.jsによるフロントエンドの実装、Cloud Functionsによるバックエンド関数の実装、GCPの各種サービスの設定、各種自動化スクリプトの作成等を担当。具体的には下記。
+
+- Nuxt.js+Composition API+TypeScriptによるフロントエンド部分の実装
+- Firestore(NoSQL型データベース)のDB設計および適切なセキュリティルールとインデックスの設定
+- Cloud RunおよびFirebase Hostingを使用したアプリケーションのホスティングとSSRの実装
+- Cloud Functionsを使用した各種バックエンド関数やGitHubのWebhook用関数の作成
+- GCLB+IAP+Cloud Runを組み合わせたGoogleアカウントベースのアクセス制限の設定
+- Algoliaを使用した全文検索機能の実装
+- Vuetifyを使用したフロントエンドUIの作成
+- 各種GitHub APIの調査
+- デプロイ用Bashスクリプトの作成
+- shellcheck/hadolint等を使用した静的解析とバリデーションの実装
+
+【発揮したバリュー】Nuxt.jsとFirebaseでの開発はいずれも初体験であり特にNuxt.js+Composition API+TypeScriptの組み合わせに関しては情報も少なかったが、各種書籍やネット情報を地道に調査してベストプラクティスを素早く習得。NoSQLデータベースであるFirestoreの独特な設計手法やセキュリティルールにも戸惑ったがこちらも短期間でキャッチアップ。フロントエンドのUI作成作業も10年以上ぶりであったが、HTMLやCSS(Flexboxやグリッドシステム等)をゼロから学習し直してVuetifyによるレスポンシブなUIをとりあえずは実現。
+
 ### ブロックチェーン系BtoBサービスのインフラ構築/DevOps基盤構築【Go/EKS/Envoy/GitOps/Spinnaker/Terraform/AWS】(2019年〜2020年)
 
 【プロジェクト概要】ブロックチェーン系BtoBサービスの新規開発チームにおいて、インフラの構築/DevOps基盤構築、技術検証用アプリケーションの開発作業等を担当

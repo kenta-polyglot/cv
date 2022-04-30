@@ -35,7 +35,7 @@ Rust | Kotlin | Scala | Java | Go | Elixir | Ruby | Python | PHP | Perl | JavaSc
 
 ### フレームワーク等
 
-Iron | Vert.x | Finch | Cats | Shapeless | Scaldi | PlayFramework | Slick | ScalikeJDBC | Spec2 | Struts | Revel | Phoenix | Ruby on Rails | Flask | Django | Zend Framework | CodeIgniter | CakePHP | Ethna | Symfony | jQuery | Vue.js | MFC | .NET Framework
+Iron | Vert.x | Finch | Cats | Shapeless | Scaldi | PlayFramework | Slick | ScalikeJDBC | Spec2 | Struts | Revel | Phoenix | Ruby on Rails | Flask | Django | Zend Framework | CodeIgniter | CakePHP | Ethna | Symfony | jQuery | Vue.js | Nuxt.jsC | MFC | .NET Framework
 
 ### RDB/NoSQL
 
@@ -50,11 +50,11 @@ VPC | S3 | CloudFront | API Gateway | Lambda | ELB | EC2 | ECS | Fargate | Beans
 
 #### GCP
 
-VPC | GCS | Cloud Functions | GCE | GKE(Kubernetes) | GAE/SE(Standard Environment) | GAE/FE(Flexible Environment) | IAM | Cloud SQL | Cloud Memorystore(Redis) | Cloud Pub/Sub | Cloud NAT | Cloud Armor | BigQuery | Dataflow(Apache Beam) | Composer(Airflow) | ML Engine | Datalab | Deployment Manager | Cloud Build | Cloud Source Repository | Stackdriver Logging | Stackdriver Monitoring
+VPC | GCS | Cloud Functions | GCE | GKE(Kubernetes) | GAE/SE(Standard Environment) | GAE/FE(Flexible Environment) | IAM | Cloud SQL | Cloud Memorystore(Redis) | Cloud Pub/Sub | Cloud NAT | Cloud Armor | BigQuery | Dataflow(Apache Beam) | Composer(Airflow) | ML Engine | Datalab | Deployment Manager | Cloud Build | Cloud Source Repository | Stackdriver Logging | Stackdriver Monitoring | Firebase(Firestore)
 
 ### SaaS/PaaS
 
-GitHub | GitHub Actions | BitBucket(Stash) | CircleCI | Wercker | DataDog | Sentry | NewRelic | TreasureData | DeployGate | TestFlight
+GitHub | GitHub Actions | BitBucket(Stash) | CircleCI | Wercker | Datadog | Sentry | NewRelic | TreasureData | DeployGate | TestFlight
 
 ### その他
 

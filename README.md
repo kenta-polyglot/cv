@@ -50,7 +50,7 @@ VPC | S3 | CloudFront | API Gateway | Lambda | ELB | EC2 | ECS | Fargate | Beans
 
 #### GCP
 
-VPC | GCS | Cloud Functions | GCE | GKE(Kubernetes) | GAE/SE(Standard Environment) | GAE/FE(Flexible Environment) | IAM | Cloud SQL | Cloud Memorystore(Redis) | Cloud Pub/Sub | Cloud NAT | Cloud Armor | BigQuery | Dataflow(Apache Beam) | Composer(Airflow) | ML Engine | Datalab | Deployment Manager | Cloud Build | Cloud Source Repository | Stackdriver Logging | Stackdriver Monitoring | Firebase(Firestore)
+VPC | GCS | Cloud Functions | GCE | GKE(Kubernetes) | Cloud Run | GAE/SE(Standard Environment) | GAE/FE(Flexible Environment) | GCLB | IAP | IAM | Cloud SQL | Cloud Memorystore(Redis) | Cloud Pub/Sub | Cloud NAT | Cloud Armor | BigQuery | Dataflow(Apache Beam) | Composer(Airflow) | ML Engine | Datalab | Deployment Manager | Cloud Build | Cloud Source Repository | Stackdriver Logging | Stackdriver Monitoring | Firebase(Firestore)
 
 ### SaaS/PaaS
 
@@ -58,7 +58,7 @@ GitHub | GitHub Actions | BitBucket(Stash) | CircleCI | Wercker | Datadog | Sent
 
 ### その他
 
-Terraform | Spinnaker | Envoy | Docker | Xen | Jenkins | Fluentd | Capistrano | Chef | nginx | unicorn | Apache | Tomcat | Gulp | Webpack | Pug | SASS | Mecab | Zabbix | munin | Elasticsearch | Kibana | RabbitMQ | LDAP | LVS | BIND | DHCP | IIS | Active Directory | DirectShow | Sharepoint Server | Exchage Server
+Terraform | Spinnaker | Envoy | Docker | Xen | Jenkins | Fluentd | Capistrano | Chef | nginx | unicorn | Apache | Tomcat | Gulp | Webpack | Pug | SASS | Mecab | Zabbix | munin | Elasticsearch | Kibana | Algoria | RabbitMQ | LDAP | LVS | BIND | DHCP | IIS | Active Directory | DirectShow | Sharepoint Server | Exchage Server
 
 ## バリューを発揮しやすい業務
 

@@ -45,7 +45,7 @@ MySQL | PostgreSQL | Greenplum | Oracle | SQL Server | Redis | Memcached | Tokyo
 
 #### AWS
 
-VPC | S3 | CloudFront | API Gateway | Lambda | ELB | EC2 | ECS | Fargate | Beanstalk | EKS(Kubernetes) | Route53 | IAM | Cognito | Elasticsearch Service | RDS(MySQL|PostgreSQL) | Aurora | DynamoDB | ElastiCache(Redis|Memcached) | Kinesis | Kinesis firehose | Kinesis Video Streams | SQS | SNS | SES | Redshift | EMR(Spark) | CloudFormation | CloudWatch | EventBridge | AWS Batch | Step Functions | SageMaker | Amazon Personalize | CloudTrail | AWS Config | GuardDuty | Security Hub | CloudHSM | KMS | Parameter Store | Client VPN | VPC Peering | AWS Organizations | AWS Control Tower | AWS SSO(Single Sign-On)
+VPC | S3 | CloudFront | API Gateway | Lambda | ELB | EC2 | ECS | Fargate | Beanstalk | EKS(Kubernetes) | Route53 | IAM | Cognito | Elasticsearch Service | RDS(MySQL|PostgreSQL) | Aurora | Aurora Serverless V2 | DynamoDB | ElastiCache(Redis|Memcached) | Kinesis | Kinesis firehose | Kinesis Video Streams | SQS | SNS | SES | Redshift | EMR(Spark) | CloudFormation | CloudWatch | EventBridge | AWS Batch | Step Functions | SageMaker | Amazon Personalize | CloudTrail | AWS Config | GuardDuty | Security Hub | CloudHSM | KMS | Parameter Store | Client VPN | VPC Peering | AWS Organizations | AWS Control Tower | AWS SSO(Single Sign-On)
 
 
 #### GCP
@@ -89,38 +89,52 @@ Terraform | Spinnaker | Envoy | Docker | Xen | Jenkins | Fluentd | Capistrano | 
 
 ## 主な業務経歴
 
-### 法人向けアンケートサービスの技術スタック刷新/技術顧問/エンジニア採用支援【Rails/Fargate/Terraform/AWS】(2022年)
+### 法人向けアンケートサービスの技術スタック刷新/技術顧問/エンジニア採用支援【Rails/Fargate/Terraform/AWS】(2022年〜現在)
 
 【プロジェクト概要】技術顧問としてアンケート系Webサービスおよびその周辺サービスの技術スタックの刷新、エンジニア採用支援等を担当。
 
 ［担当業務1］各種Webサービスの技術スタックの刷新を担当。具体的には下記。
 
-- Dockerとdocker-composeの導入によるローカル開発環境構築の迅速化。専用のベースイメージの作成によるDRY化/ローカル開発用と本番用Dockerイメージの切り分け/Cache Mountの活用による不要なgemやnpmパッケージビルドの省略化等も担当。
+- Terraformによるインフラのコード化(VPC/Fargate/RDS/ElastiCache/Aurora/Lambda/CodeDeploy等)。専用のシェルスクリプトの作成によってリソース単位ごとにvalidate/plan/apply/destroyを実行できる機能を実装。設定値を他のツール(CloudFormation等)やスクリプトでも使用することを考慮してTerraformのworkspace機能を使わずに設定値を一括管理する仕組みも確立。
 - AWS環境上でのインフラの構築 => データベースのマイグレーション => アプリケーションのデプロイまでのほぼ全ての処理を1コマンドで実行およびロールバックできる仕組みの構築。
-- Terraformによるインフラのコード化(VPC/Fargate/RDS/ElastiCache/Aurora/Lambda/CodeDeploy等)。専用のシェルスクリプトの作成によってリソース単位ごとにvalidate/plan/apply/destroyを実行できる機能も実装。設定値を他のツール(CloudFormation等)やスクリプトでも使用することを考慮してTerraformのworkspace機能を使わずに設定値を一括管理する仕組みも確立。
 - Lambdaによるデータベースのマイグレーション機能の構築とCDパイプラインへの組み込み。Lambdaの実行環境にはコンテナイメージを使用してローカル環境からもinvokeできるように専用のスクリプトを作成。
-- CodeDeployを活用したFargateのBLUE/GREENデプロイ機能の構築。テストトラフィック疎通検証用のイベントフックLambdaの作成やNAT Gateway導入によるLambdaのIPアドレス固定化等も担当。
+- CodeDeployを活用したFargateのBLUE/GREENデプロイ機能の構築。テストトラフィック疎通検証用のイベントフックLambda(言語はJavaScript)の作成やNAT Gateway導入によるLambdaのIPアドレス固定化等も担当。
 - Application Auto ScalingによるFargateのオートスケール機能の実装。
+- Capacity Provider Strategyの設定とFargate SPOTの導入、および夜間の自動スケールイン機能の導入によるコスト低減。
 - GitHub ActionsによるCI/CDパイプラインの構築。OIDCプロバイダーの活用によりIAMアクセスキーをGitHub側で保持せずに一時トークンでAWS CLIやTerraformを実行する仕組みも確立。
+- Dockerとdocker-composeの導入によるローカル開発環境構築の迅速化。専用のベースイメージの作成によるDRY化/ローカル開発用と本番用Dockerイメージの切り分け/Cache Mountの活用による不要なgemやnpmパッケージビルドの省略化等も担当。
+- buildx導入によるDockerイメージのマルチCPUアーキテクチャ対応のビルド機能を構築。FargateがECRからイメージをpullする時間を短縮するためにzstd圧縮機能も導入。
+- Dockerイメージへのタグ付けルールの策定とタグの自動設定機能の作成、およびGitHub Actions上でのタグ指定によるFargateタスクのロールバックの仕組み等も構築。
 - ECS Execの活用により踏み台サーバ等を経由せずにFargate上のコンテナにログインできる仕組みの構築。管理用のFargateタスクを動的に起動してログインできるシェルスクリプトも作成。
 - 非本番環境のAWSアカウント上のWebサービスのALBに対するアクセス制限の実装。不便なIP制限ではなくGoogleアカウントによる簡易かつ効率的なアクセス制御を実現。
 - 1PasswordとAWS Parameter Storeを活用した秘匿情報管理の仕組みの構築。1Password CLIとAWS CLIを連携させて1Password上の秘匿情報を簡単にParameter Storeに設定できるスクリプトも作成。
 - shellcheck/hadolint等によるシェルスクリプト/Dockerfileの静的解析機能の実装。
-- AWS SSOの導入により、ローカル環境でIAMアクセスキーを使わずにAWS CLIやTerraformやそれらを含むシェルスクリプトを実行できる仕組みを構築。
-- AWSのマルチアカウントセキュリティレベルの向上のための各種調査と検証作業(AWS Control Tower/Security Hub/CloudTrail/AWS Config/GuardDutyの導入や外部識者による脆弱性チェックの支援等)
+- AWS SSO(IAM Identity Center)の導入により、ローカル環境でIAMアクセスキーを使わずにAWS CLIやTerraformやそれらを含むシェルスクリプトを実行できる仕組みを構築。SSOユーザーやグループや権限セットは全てTerraform化してコードで管理。
+- AWSのマルチアカウントセキュリティレベルの向上のための各種設定作業(AWS Control Tower/Security Hub/CloudTrail/AWS Config/GuardDutyの導入や外部識者による脆弱性チェックの支援等)
+- EventBridge + StepFunctions + Lambdaによる、AWSアカウント新規追加時の各種セキュリティ設定の自動化作業。これらも全てコードで管理。
 
-［担当業務2］作業フローの改善作業を担当。具体的には下記。
+［担当業務2］アンケート系Webサービスのインフラの完全リプレイス作業を担当。具体的には下記。
+
+- インフラをTerraformでほぼ完全にコード化。(Route53の一部のレコードやACMに関してはライフサイクルが異なるためAWSコンソール上で作成)
+- コンピュート基盤をEC2からFargateに移行。必要なパッケージの選別、不要なコードの削除、秘匿情報のParameter Storeへの移行と環境変数による設定、DockerfileおよびDockerイメージの作成とパイプライン化、負荷試験によるFargateタスクの必要スペック算出作業を担当。
+- 数TBの大規模RDS MySQLデータベースを別アカウントのAuora MySQLに移行。VPCピアリングの設定、AWSアカウントをまたがるレプリケーションの設定、その他スナップショットのコピーやAuroraリードレプリカからの昇格、Terraformとの関連付け等の詳細な手順書の作成と事前検証作業を担当
+- ElastiCache RedisとElasticCache Memcachedのアカウントをまたがるデータ移行作業を担当。こちらも詳細な手順書を作成して複数回の入念な検証作業を実施。
+- 大容量S3バケットの移行。
+- DNSの切り替え。
+- 一連の作業はメンテナンス時間を事前に告知して深夜に実施。ダウンタイムは数時間程度でほぼトラブル無く移行することに成功。
+
+［担当業務3］作業フローの改善作業を担当。具体的には下記。
 
 - Scheduled reminderの導入によりGitHubとSlackを連携。エンジニアがreviewerとしてアサインされているプルリク一覧が平日朝にメンション付きで通知されたり、GitHub上でメンションが発生した場合に該当する担当者にリアルタイムで通知が発生することにより、作業漏れの可視化やコミュニケーションの円滑化を実現。
 - GitHubのブランチ構成の変更と適切なブランチ保護の設定とGitHub Actionsとの連携により、安全性の向上や作業フロー/デプロイフローの統一化に貢献。
 
-［担当業務3］エンジニア採用支援やハイレベルエンジニアのスポット参画支援を担当。具体的には下記。
+［担当業務4］エンジニア採用支援やハイレベルエンジニアのスポット参画支援を担当。具体的には下記。
 
 - 求人サービスに掲載するエンジニア募集広告の文面作成やリライトの支援。企業様のニーズとエンジニア採用市場の現状(経験者エンジニアの超売り手市場になっている)、および優秀なエンジニアが興味を持つ可能性の高い情報(技術スタックを刷新中であることや少人数チームのため手を挙げれば様々な分野にチャレンジできる環境であること等)を多面的に考察した上で文章を考案。
-- エンジニア面接への立ち会い。応募者様の技術力/自走力/思考力/技術への興味関心/人間性/柔軟性を判断するための適切な質問項目を作成。業務経歴書等のドキュメントも事前に十分な時間を確保して熟読。企業様への関心度や好感度を高めていただくために面接時の態度にも配慮。
+- エンジニア面接への立ち会い。応募者様の技術力/自走力/思考力/技術への興味関心/人間性/柔軟性を判断するための適切な質問項目を作成。業務経歴書等のドキュメントも事前に十分な時間を確保して熟読。企業様への関心度や好感度を高めていただくために面接時の態度にも配慮。結果として優秀なSRE2名様、バックエンドエンジニア1名様の正社員採用に大きく貢献。
 - サービスやインフラの脆弱性チェックを依頼できるエンジニアをSNSその他を活用して募集。DMも積極的に使用してお声がけをおこない、結果的にAWSセキュリティの専門家の方のスポット参画を実現。
 
-【発揮したバリュー】ローカル開発環境の整備やインフラのコード化、CI/CDパイプラインの構築など、作業フローの効率化と各種自動化作業等に大きく貢献。技術スタックの刷新による開発者体験(DX)の向上施策も推進して企業様のリクルーティング力のアップにも貢献。エンジニア採用支援やスポット参画支援等により実際の採用活動にも貢献。
+【発揮したバリュー】ローカル開発環境の整備やインフラのコード化、CI/CDパイプラインの構築など、作業フローの効率化と各種自動化作業等に大きく貢献。主要サービスのインフラの完全リプレイスという大きなプレッシャーを伴う作業もほぼトラブル無く完遂。技術スタックの刷新による開発者体験(DX)の向上施策も推進して企業様のリクルーティング力のアップにも貢献。エンジニア採用支援やスポット参画支援等により実際の採用活動にも貢献。
 
 ### GitHubを活用したプログラミング学習サービスの開発【Nuxt.js/TypeScript/Firebase】(2021年)
 

@@ -7,8 +7,8 @@
 |名前|勝又 健太|
 |生息地|東京都 渋谷区|
 |オンラインサロン|[雑食系エンジニアサロン](https://zsksalon.com/) |
-|Twitter|[@poly_soft](https://twitter.com/poly_soft) (フォロワー29,000超)|
-|Qiita|[@poly_soft](https://qiita.com/poly_soft) (Contribution数17,000超)|
+|Twitter|[@poly_soft](https://twitter.com/poly_soft) (フォロワー34,000超)|
+|Qiita|[@poly_soft](https://qiita.com/poly_soft) (Contribution数27,000超)|
 |Youtube|[雑食系エンジニアTV](https://www.youtube.com/channel/UC_HLK-ksslL-Z_2wiIZDlMg) (チャンネル登録者数50,000超)<br>[KENTA兄さん](http://www.youtube.com/channel/UC2PpsPaCBhYTWCj40wVJRyw) (チャンネル登録者数4,000超)|
 |ポートフォリオ|[kenta-aktsk](https://github.com/kenta-aktsk) (ほぼElixirのみ)|
 |小説|[鬼喰い](https://ncode.syosetu.com/n1075ct/)|
@@ -101,7 +101,9 @@ Terraform | Spinnaker | Envoy | Docker | Xen | Jenkins | Fluentd | Capistrano | 
 - CodeDeployを活用したFargateのBLUE/GREENデプロイ機能の構築。テストトラフィック疎通検証用のイベントフックLambda(言語はJavaScript)の作成やNAT Gateway導入によるLambdaのIPアドレス固定化等も担当。
 - Application Auto ScalingによるFargateのオートスケール機能の実装。
 - Capacity Provider Strategyの設定とFargate SPOTの導入、および夜間の自動スケールイン機能の導入によるコスト低減。
+- RailsのResqueジョブのモニタリング用に、Redisの残キュー数を1分ごとに取得してCloudWatchの埋め込みメトリクス形式で出力するLambdaを作成。
 - GitHub ActionsによるCI/CDパイプラインの構築。OIDCプロバイダーの活用によりIAMアクセスキーをGitHub側で保持せずに一時トークンでAWS CLIやTerraformを実行する仕組みも確立。
+- GitHub Actionsのマトリクス戦略を使用したDockerイメージのビルドとプッシュの並列化、および独自の工夫によるアプリケーションの並列デプロイを実現。
 - Dockerとdocker-composeの導入によるローカル開発環境構築の迅速化。専用のベースイメージの作成によるDRY化/ローカル開発用と本番用Dockerイメージの切り分け/Cache Mountの活用による不要なgemやnpmパッケージビルドの省略化等も担当。
 - buildx導入によるDockerイメージのマルチCPUアーキテクチャ対応のビルド機能を構築。FargateがECRからイメージをpullする時間を短縮するためにzstd圧縮機能も導入。
 - Dockerイメージへのタグ付けルールの策定とタグの自動設定機能の作成、およびGitHub Actions上でのタグ指定によるFargateタスクのロールバックの仕組み等も構築。
@@ -112,6 +114,8 @@ Terraform | Spinnaker | Envoy | Docker | Xen | Jenkins | Fluentd | Capistrano | 
 - AWS SSO(IAM Identity Center)の導入により、ローカル環境でIAMアクセスキーを使わずにAWS CLIやTerraformやそれらを含むシェルスクリプトを実行できる仕組みを構築。SSOユーザーやグループや権限セットは全てTerraform化してコードで管理。
 - AWSのマルチアカウントセキュリティレベルの向上のための各種設定作業(AWS Control Tower/Security Hub/CloudTrail/AWS Config/GuardDutyの導入や外部識者による脆弱性チェックの支援等)
 - EventBridge + StepFunctions + Lambdaによる、AWSアカウント新規追加時の各種セキュリティ設定の自動化作業。これらも全てコードで管理。
+- サービスの中心となる数十億件のテーブルのレコード削減(約1/5に削減)と他のテーブルへのデータ移行、適正PARTITION数の検証と既存PARTITIONの削除、不要なインデックスの削除等によりSELECT系クエリのパフォーマンス向上を実現(平均レイテンシを10〜20%前後短縮)。
+- メンテナンスモード移行手順の作成および深夜メンテナンスも担当。
 
 ［担当業務2］アンケート系Webサービスのインフラの完全リプレイス作業を担当。具体的には下記。
 

@@ -114,7 +114,7 @@ Terraform | Spinnaker | Envoy | Docker | Xen | Jenkins | Fluentd | Capistrano | 
 - AWS SSO(IAM Identity Center)の導入により、ローカル環境でIAMアクセスキーを使わずにAWS CLIやTerraformやそれらを含むシェルスクリプトを実行できる仕組みを構築。SSOユーザーやグループや権限セットは全てTerraform化してコードで管理。
 - AWSのマルチアカウントセキュリティレベルの向上のための各種設定作業(AWS Control Tower/Security Hub/CloudTrail/AWS Config/GuardDutyの導入や外部識者による脆弱性チェックの支援等)
 - EventBridge + StepFunctions + Lambdaによる、AWSアカウント新規追加時の各種セキュリティ設定の自動化作業。これらも全てコードで管理。
-- サービスの中心となる数十億件のテーブルのレコード削減(約1/5に削減)と他のテーブルへのデータ移行、適正PARTITION数の検証と既存PARTITIONの削除、不要なインデックスの削除等によりSELECT系クエリのパフォーマンス向上を実現(平均レイテンシを10〜20%前後短縮)。
+- サービスの中心となる数十億件のテーブルのレコード削減(約1/5に削減)と他のテーブルへのデータ移行、適正PARTITION数の検証と既存PARTITIONの削除、不要なインデックスの削除等によりSELECT系クエリのパフォーマンス向上を実現(平均レイテンシを30〜90%前後短縮)。
 - メンテナンスモード移行手順の作成および深夜メンテナンスも担当。
 
 ［担当業務2］アンケート系Webサービスのインフラの完全リプレイス作業を担当。具体的には下記。

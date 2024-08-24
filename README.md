@@ -45,7 +45,7 @@ MySQL | PostgreSQL | Greenplum | Oracle | SQL Server | Redis | Memcached | Tokyo
 
 #### AWS
 
-VPC | S3 | CloudFront | API Gateway | Lambda | ELB | EC2 | ECS | Fargate | Beanstalk | EKS(Kubernetes) | Route53 | IAM | Cognito | Elasticsearch Service | RDS(MySQL|PostgreSQL) | Aurora | Aurora Serverless V2 | DynamoDB | ElastiCache(Redis|Memcached) | Kinesis | Kinesis firehose | Kinesis Video Streams | SQS | SNS | SES | Redshift | EMR(Spark) | CloudFormation | CloudWatch | EventBridge | AWS Batch | Step Functions | SageMaker | Amazon Personalize | CloudTrail | AWS Config | GuardDuty | Security Hub | CloudHSM | KMS | Parameter Store | Client VPN | VPC Peering | AWS Organizations | AWS Control Tower | AWS SSO(Single Sign-On)
+VPC | S3 | CloudFront | API Gateway | Lambda | ELB | EC2 | ECS | Fargate | Beanstalk | EKS(Kubernetes) | Route53 | IAM | IAM Identity Center | Cognito | Elasticsearch Service | RDS(MySQL|PostgreSQL) | Aurora | Aurora Serverless V2 | DynamoDB | ElastiCache(Redis|Memcached) | Kinesis | Kinesis firehose | Kinesis Video Streams | SQS | SNS | SES | Redshift | EMR(Spark) | CloudFormation | CloudWatch | EventBridge | AWS Batch | Step Functions | SageMaker | Amazon Personalize | CloudTrail | AWS Config | GuardDuty | Amazon Inspector | Security Hub | CloudHSM | KMS | Parameter Store | Client VPN | VPC Peering | VPC PrivateLink | AWS Organizations | AWS Control Tower
 
 
 #### GCP
@@ -89,7 +89,38 @@ Terraform | Spinnaker | Envoy | Docker | Xen | Jenkins | Fluentd | Capistrano | 
 
 ## 主な業務経歴
 
-### 法人向けアンケートサービスの技術スタック刷新/技術顧問/エンジニア採用支援【Rails/Fargate/Terraform/AWS】(2022年〜現在)
+### 法人向けHR系サービスの新規インフラ構築/運用/監視業務【Go/AWS/Datadog】(2024年〜現在)
+
+【プロジェクト概要】コンパウンドスタートアップを志向する企業様の新規HR系サービスのインフラエンジニア/DevOpsエンジニアとして参画。AWSのマルチアカウント構成のインフラのアーキテクチャ設計、構築、運用、監視業務等を担当。具体的には下記。
+
+- マルチアカウント構成で複数のアプリケーションをホストするためのインフラ設計と技術選定。(将来的に複数のStream aligned teamで個別にアプリケーションを開発運用していくことが要件だったためセキュリティ面を考慮して各アプリケーションを別々のAWSアカウントでホストする方式を採用)
+- Terraformによるインフラのコード化。専用のシェルスクリプトを作成し各アプリケーションごと＆ユニット単位ごとにvalidate/plan/apply/destroyを柔軟に実行できる機能を実装。設定値を他のツール(CloudFormationやAWS CLI等)やスクリプトでも共用可能にすることを重視してworkspace機能を使わずに全ツールの設定値を一括管理する仕組みも確立。
+- AWSアカウントをまたがる各アプリケーション間のセキュアかつ低レイテンシーかつ一方向の通信をPrivateLink(VPC Endpoint + NLB)を使用して実現。(将来的にVPC Peeringの導入が要件に加わることも考慮して各アプリケーションのVPCのCIDRは重複しないように設計)
+- インフラリソースのapply => データベースのマイグレーション => アプリケーションのデプロイまでの全ての処理をローカル環境から1コマンドで実行およびロールバックできる仕組みの構築。さらに各処理の個別実行を可能にすることで開発用AWSアカウントに対するインフラ系作業の効率化を実現。
+- 1PasswordとAWS Parameter Storeの連携による秘匿情報管理の仕組みを構築。ローカル環境において秘匿情報を保持しないだけでなくTerminalにおいても秘匿情報を表示/入力しない(historyに残さない)で済む方式を導入。CI環境でも極力GitHub Secretsを使わない方式で対応。
+- GitHub ActionsによるCI/CDパイプラインの構築。OIDCプロバイダーの活用により一時トークンでAWS CLIやTerraformを実行する仕組みを導入。(セキュリティ面を考慮してGitHub Secretsは極力使わずにほぼ全ての秘匿情報をAWS Parameter Storeで管理)
+- 全アプリケーションのデプロイを一気通貫で実行できるCDワークフローを構築。(依存関係のあるアプリケーションの場合は直列でデプロイ。順序依存が存在しない場合はmatrix機能を活用して各アプリケーションのインフラの並列apply/Dockerイメージの並列ビルド等による高速化を実現)
+- ローカル環境/CI環境/AWS環境の全てでARM64アーキテクチャのDockerイメージを使用する方式に統一。(AWS環境においてはARM64アーキテクチャの場合Fargate SPOTが使えない等のデメリットはあるがビルド対象を統一できるメリットと今後ARM64が主流になることは確実であることを考慮して早期に対応)
+- セッション認証とトークン認証をミックスした認証/認可のフローを設計。トークンをブラウザ側に配置しないことにより「トークン窃取の危険性が極めて低い」「鍵のローテーションが不要」「リフレッシュトークンが不要」「即時の強制ログアウトが可能」など、セッション認証とトークン認証の2つの方式のよいとこ取りをしたフローを実現。
+- Lambdaによるデータベースのマイグレーション機能の構築(Lambdaの言語はGo)とCDパイプラインへの組み込み。Programmableなマイグレーションツールを導入することによりコマンドラインからでもLambdaのコードからでも同様なマイグレーション処理を実現できるように工夫。専用スクリプトから任意の引数でLambdaをコールすることによるロールバック処理等も可能にした。
+- CodeDeployを活用したFargateのBLUE/GREENデプロイ機能の導入。テストトラフィック疎通検証用のイベントフックLambda(言語はGo)の作成、NAT Gateway導入によるLambdaのIPアドレス固定化等も担当。
+- Application Auto ScalingによるFargateのオートスケール機能の実装。
+- CloudFront+S3によるCDNの構築。(署名付きURL用の鍵設定、CORS設定、各種ポリシーやTTLの設定など)
+- SESによるメール送信システムの構築。バウンス率等を一元管理するために単一のAWSアカウントにSESを構築して複数AWSアカウントのアプリケーションからSMTPで送信する方式を導入。(バウンスや苦情はSNSとLambdaを経由してSlackに通知)
+- Distrolessイメージの導入とFargateコンテナのReadonly化によりコンテナへの脆弱性やマルウェア混入のリスクを大幅に低減。
+- shellcheck/hadolint/cfnlint等によるシェルスクリプト/Dockerfile/CloudFormationテンプレートの静的解析機能の導入。
+- CIへのtrivyの導入によりプルリク時点で各言語パッケージの脆弱性・Terraform/Dockerfileの脆弱性・コードへの秘匿情報の混入を検知できる仕組みを構築
+- buildxによるDockerイメージのマルチCPUアーキテクチャ対応のビルド機能の導入とECRのリモートキャッシュによるビルド高速化を実現。
+- ECS Execにより踏み台サーバ等を経由せずにFargate上のコンテナにログインできる仕組みの構築。管理用のFargateタスクを動的に起動してログインできるシェルスクリプトも作成。
+- 非本番環境のAWSアカウント上のWebサービスのALBに対するGoogle認証によるアクセス制限の導入。
+- IAM Identity Center(IIC)の導入により、ローカル環境でIAMアクセスキーを使わずにAWS CLIやTerraformやそれらを含むシェルスクリプトを実行できる仕組みを構築。IICユーザーやグループや権限セットは全てTerraform化してコードで管理。
+- AWSのマルチアカウントのセキュリティレベルの向上のために各種セキュリティサービスを導入(AWS Control Tower/Security Hub/CloudTrail/AWS Config/GuardDuty/Amazon Inspectorなど)
+- EventBridge + StepFunctions + Lambdaによる、AWSアカウント新規追加時の各種セキュリティ設定の自動化機能を実装。これらも全てTerraformで管理。
+- Datadogによる監視システムの導入。DatadogのAWS Integrationの各AWSアカウントへのインストール、Datadog AgentとFireLens(fluentbit)によるFargateの詳細メトリクスとログの転送、監視メトリクスの選定とダッシュボードの作成、モニター(アラート)の作成、SLOの作成を担当。(ダッシュボード以外の全ての設定はコード化してTerraformで管理)
+
+【発揮したバリュー】ローカル開発環境の整備、インフラアーキテクチャ設計と構築、インフラのコード化、CI/CDパイプラインの構築、運用監視システムの構築など、インフラおよびDevSecOps周りの作業をほぼ一人で担当して短期間でのローンチとプロダクトの安定稼働の両立に大きく貢献。
+
+### 法人向けアンケートサービスの技術スタック刷新/技術顧問/エンジニア採用支援【Rails/Fargate/Terraform/AWS】(2022年〜2024年)
 
 【プロジェクト概要】技術顧問としてアンケート系Webサービスおよびその周辺サービスの技術スタックの刷新、エンジニア採用支援等を担当。
 

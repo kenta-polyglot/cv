@@ -45,7 +45,7 @@ MySQL | PostgreSQL | Greenplum | Oracle | SQL Server | Redis | Memcached | Tokyo
 
 #### AWS
 
-VPC | S3 | CloudFront | API Gateway | Lambda | ELB | EC2 | ECS | Fargate | Beanstalk | EKS(Kubernetes) | Route53 | IAM | IAM Identity Center | Cognito | Elasticsearch Service | RDS(MySQL|PostgreSQL) | Aurora | Aurora Serverless V2 | DynamoDB | ElastiCache(Redis|Memcached) | Kinesis | Kinesis firehose | Kinesis Video Streams | SQS | SNS | SES | Redshift | EMR(Spark) | CloudFormation | CloudWatch | EventBridge | AWS Batch | Step Functions | SageMaker | Amazon Personalize | CloudTrail | AWS Config | GuardDuty | Amazon Inspector | Security Hub | CloudHSM | KMS | Parameter Store | Client VPN | VPC Peering | VPC PrivateLink | AWS Organizations | AWS Control Tower
+VPC | S3 | CloudFront | API Gateway | Lambda | ELB | EC2 | ECS | Fargate | Beanstalk | EKS(Kubernetes) | Route53 | IAM | IAM Identity Center | Cognito | Elasticsearch Service | RDS(MySQL|PostgreSQL) | Aurora | Aurora Serverless V2 | DynamoDB | ElastiCache(Redis|Memcached) | Kinesis | Kinesis firehose | Kinesis Video Streams | SQS | SNS | SES | Redshift | EMR(Spark) | CloudFormation | CloudWatch | Athena | EventBridge | AWS Batch | Step Functions | SageMaker | Amazon Personalize | CloudTrail | AWS Config | GuardDuty | Amazon Inspector | Security Hub | CloudHSM | KMS | Parameter Store | Client VPN | VPC Peering | VPC PrivateLink | AWS Organizations | AWS Control Tower
 
 
 #### GCP

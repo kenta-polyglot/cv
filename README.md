@@ -117,6 +117,7 @@ Terraform | Spinnaker | Envoy | Docker | Xen | Jenkins | Fluentd | Capistrano | 
 - AWSのマルチアカウントのセキュリティレベルの向上のために各種セキュリティサービスを導入(AWS Control Tower/Security Hub/CloudTrail/AWS Config/GuardDuty/Amazon Inspectorなど)
 - EventBridge + StepFunctions + Lambdaによる、AWSアカウント新規追加時の各種セキュリティ設定の自動化機能を実装。
 - Datadogによる監視システムの導入。Datadog AgentとFireLens(fluentbit)によるFargateの詳細メトリクスとログの転送、監視メトリクスの選定とダッシュボードの作成、モニター(アラート)の作成、SLOの作成等を担当。
+- AthenaによるALBアクセスログ等の検索機能の導入。
 
 【発揮したバリュー】ローカル開発環境の整備、インフラアーキテクチャ設計と構築、インフラのコード化、CI/CDパイプラインの構築、運用監視システムの構築など、インフラおよびDevSecOps周りの作業をほぼ一人で担当して短期間でのローンチとプロダクトの安定稼働の両立に大きく貢献。
 

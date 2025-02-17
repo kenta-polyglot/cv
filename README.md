@@ -99,24 +99,18 @@ Terraform | Spinnaker | Envoy | Docker | Xen | Jenkins | Fluentd | Capistrano | 
 - トークン設計。OAuth2/OIDCに準拠した上でIDトークン/アクセストークンの各種項目とリフレッシュトークンを設計。
 - ネットワーク設計とインフラ設計。
 - Terraformによるインフラのコード化。専用のシェルスクリプトを作成し各ユニット単位ごとにvalidate/plan/apply/destroyを柔軟に実行できる機能を実装。設定値を他のツール(CloudFormationやAWS CLI等)やスクリプトでも共用可能にすることを重視してworkspace機能を使わずに全ツールの設定値を一括管理する仕組みも導入。
-- 既存の各アプリケーション用のAWSアカウントと認証基盤用のAWSアカウント間のセキュア・低レイテンシー・一方向の通信をPrivateLink(VPC Endpoint)を使用して実現。
 - インフラリソースのapply => データベースのマイグレーション => アプリケーションのデプロイまでの全ての処理をローカル環境から1コマンドで実行およびロールバックできる仕組みの構築。さらに各処理の個別実行を可能にすることで開発用AWSアカウントに対するインフラ系作業の効率化を実現。
-- GitHub ActionsによるCI/CDパイプラインの構築。OIDCプロバイダーの活用により一時トークンでAWS CLIやTerraformを実行する仕組みを導入。(セキュリティ面を考慮してGitHub Secretsは極力使わずにほぼ全ての秘匿情報をAWS Parameter Storeで管理)
+- GitHub ActionsによるCI/CDパイプラインの構築。
 - ローカル環境/CI環境/AWS環境の全てでARM64アーキテクチャのDockerイメージを使用する方式に統一。
-- Lambdaによるデータベースのマイグレーション機能の構築(Lambdaの言語はGo)とCDパイプラインへの組み込み。Programmableなマイグレーションツールを導入することによりコマンドラインからでもLambdaのコードからでも同様なマイグレーション処理を実現できるように工夫。専用スクリプトから任意の引数でLambdaをコールすることによるロールバック処理等も導入。
 - CodeDeployを活用したFargateのBLUE/GREENデプロイ機能の導入。
-- Application Auto ScalingによるFargateのオートスケール機能の実装。
-- SESによるメール送信システムの構築。
 - Distrolessイメージの導入とFargateコンテナのReadonly化によりコンテナへの脆弱性やマルウェア混入のリスクを大幅に低減。
 - shellcheck/hadolint/cfnlint等によるシェルスクリプト/Dockerfile/CloudFormationテンプレートの静的解析機能の導入。
 - CIへのtrivyの導入により定期的に各言語パッケージの脆弱性・Terraform/Dockerfileの脆弱性・コードへの秘匿情報の混入を検知できる仕組みを構築。
 - buildxによるDockerイメージのマルチCPUアーキテクチャ対応のビルド機能の導入とECRのリモートキャッシュによるビルド高速化を実現。
-- ECS Execにより踏み台サーバ等を経由せずにFargate上のコンテナにログインできる仕組みの構築。管理用のFargateタスクを動的に起動してログインできるシェルスクリプトも作成。
 - 非本番環境のAWSアカウント上のWebサービスのALBに対するGoogle認証によるアクセス制限の導入。
-- CloudFront+ALBの構成にVPC Originを追加することによりALBのinternal化とセキュリティレベルの向上とコスト削減を実現。
+- CloudFront+ALBの構成にVPC Originを追加することによりALBをinternal化。セキュリティレベルの向上とコスト削減を実現。
 
 【発揮したバリュー】OAuth2/OIDCに準拠した認証/認可基盤のフルスクラッチ設計という難易度の高い作業を2ヶ月程度の短期間で対応。さらにインフラアーキテクチャの設計と構築、インフラのコード化、CI/CDパイプラインの構築など、インフラおよびDevSecOps周りの作業をほぼ一人で担当してプロジェクトの円滑な進捗に大きく貢献。
-
 
 ### 法人向けHR系サービスの新規インフラ構築/運用/監視業務【Go/AWS/Datadog】(2024年)
 

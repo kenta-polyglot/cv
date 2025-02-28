@@ -10,7 +10,8 @@
 |Twitter|[@poly_soft](https://twitter.com/poly_soft) (フォロワー34,000超)|
 |Qiita|[@poly_soft](https://qiita.com/poly_soft) (Contribution数27,000超)|
 |Youtube|[雑食系エンジニアTV](https://www.youtube.com/channel/UC_HLK-ksslL-Z_2wiIZDlMg) (チャンネル登録者数50,000超)<br>[KENTA兄さん](http://www.youtube.com/channel/UC2PpsPaCBhYTWCj40wVJRyw) (チャンネル登録者数4,000超)|
-|ポートフォリオ|[kenta-aktsk](https://github.com/kenta-aktsk) (ほぼElixirのみ)|
+|ポートフォリオ1|[kenta-aktsk](https://github.com/kenta-aktsk) (Elixirのコードが中心です)|
+|ポートフォリオ2|[codeout](https://github.com/polygloteng/codeout) (個人で開発したプログラミング学習サービスのリポジトリです。Nuxt.js、TypeScript、Firebaseを使用しています)|
 |小説|[鬼喰い](https://ncode.syosetu.com/n1075ct/)|
 |英語力|TOEIC820点|
 |bokete力|[星13,000超](https://bokete.jp/user/polysoft)|

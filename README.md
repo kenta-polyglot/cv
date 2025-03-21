@@ -100,13 +100,17 @@ Terraform | Spinnaker | Envoy | Docker | Xen | Jenkins | Fluentd | Capistrano | 
 - トークン設計。OAuth2/OIDCに準拠した上でIDトークン/アクセストークンの各種項目とリフレッシュトークンを設計。
 - ネットワーク設計とインフラ設計。
 - Terraformによるインフラのコード化。専用のシェルスクリプトを作成し各ユニット単位ごとにvalidate/plan/apply/destroyを柔軟に実行できる機能を実装。設定値を他のツール(CloudFormationやAWS CLI等)やスクリプトでも共用可能にすることを重視してworkspace機能を使わずに全ツールの設定値を一括管理する仕組みも導入。
+- 既存アプリケーションからのAWSアカウントをまたがるセキュア/低レイテンシー/一方向の通信のためにPrivateLink(非NLB構成)を導入。
 - インフラリソースのapply => データベースのマイグレーション => アプリケーションのデプロイまでの全ての処理をローカル環境から1コマンドで実行およびロールバックできる仕組みの構築。さらに各処理の個別実行を可能にすることで開発用AWSアカウントに対するインフラ系作業の効率化を実現。
-- GitHub ActionsによるCI/CDパイプラインの構築。
 - ローカル環境/CI環境/AWS環境の全てでARM64アーキテクチャのDockerイメージを使用する方式に統一。
 - CodeDeployを活用したFargateのBLUE/GREENデプロイ機能の導入。
+- Application Auto ScalingによるFargateのオートスケール機能の実装。
+- 開発用環境において平日深夜/土日にECSタスクとAurora MySQLを自動停止する仕組みの導入。
+- CloudFront+S3によるCDNの構築。
 - Distrolessイメージの導入とFargateコンテナのReadonly化によりコンテナへの脆弱性やマルウェア混入のリスクを大幅に低減。
 - shellcheck/hadolint/cfnlint等によるシェルスクリプト/Dockerfile/CloudFormationテンプレートの静的解析機能の導入。
 - CIへのtrivyの導入により定期的に各言語パッケージの脆弱性・Terraform/Dockerfileの脆弱性・コードへの秘匿情報の混入を検知できる仕組みを構築。
+- ECS Execにより踏み台サーバ等を経由せずにFargate上のコンテナにログインできる仕組みの構築。管理用のFargateタスクを動的に起動してログインできるシェルスクリプトも作成。
 - buildxによるDockerイメージのマルチCPUアーキテクチャ対応のビルド機能の導入とECRのリモートキャッシュによるビルド高速化を実現。
 - 非本番環境のAWSアカウント上のWebサービスのALBに対するGoogle認証によるアクセス制限の導入。
 - CloudFront+ALBの構成にVPC Originを追加することによりALBをinternal化。セキュリティレベルの向上とコスト削減を実現。

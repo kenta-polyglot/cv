@@ -46,8 +46,7 @@ MySQL | PostgreSQL | Greenplum | Oracle | SQL Server | Redis | Memcached | Tokyo
 
 #### AWS
 
-VPC | S3 | CloudFront | API Gateway | Lambda | ELB | EC2 | ECS | Fargate | Beanstalk | EKS(Kubernetes) | Route53 | IAM | IAM Identity Center | Cognito | Elasticsearch Service | RDS(MySQL|PostgreSQL) | Aurora | Aurora Serverless V2 | DynamoDB | ElastiCache(Redis|Memcached) | Kinesis | Kinesis firehose | Kinesis Video Streams | SQS | SNS | SES | Redshift | EMR(Spark) | CloudFormation | CloudWatch | Athena | EventBridge | AWS Batch | Step Functions | SageMaker | Amazon Personalize | CloudTrail | AWS Config | GuardDuty | Amazon Inspector | Security Hub | CloudHSM | KMS | Parameter Store | Client VPN | VPC Peering | VPC PrivateLink | AWS Organizations | AWS Control Tower
-
+VPC | S3 | CloudFront | API Gateway | Lambda | ELB | EC2 | ECS | Fargate | Beanstalk | EKS(Kubernetes) | Route53 | IAM | IAM Identity Center | Cognito | Elasticsearch Service | RDS(MySQL|PostgreSQL) | Aurora | Aurora Serverless V2 | Aurora Global Database | DynamoDB | DynamoDB Global Tables | ElastiCache(Redis|Memcached) | Kinesis | Kinesis firehose | Kinesis Video Streams | SQS | SNS | SES | Redshift | EMR(Spark) | CloudFormation | CloudWatch | Athena | EventBridge | AWS Batch | Step Functions | SageMaker | Amazon Personalize | CloudTrail | AWS Config | GuardDuty | Amazon Inspector | Security Hub | CloudHSM | Payment Cryptography | Private CA | KMS | Parameter Store | Client VPN | VPC Peering | VPC PrivateLink | AWS Organizations | AWS Control Tower
 
 #### GCP
 
@@ -89,6 +88,51 @@ Terraform | Spinnaker | Envoy | Docker | Xen | Jenkins | Fluentd | Capistrano | 
 - ログ収集と分析基盤の構築
 
 ## 主な業務経歴
+
+### PCI DSS準拠およびDR対応が必須要件となるキャッシュレス決済サービスのインフラ設計/構築業務【Go/AWS】(2025年〜2026年)
+
+【プロジェクト概要】キャッシュレス決済サービスを提供する大手金融系企業様の新しい決済端末(将来的に数十万台規模になる想定)用のインフラ設計と構築を担当する1人目のインフラエンジニアとして参画。PCI DSS準拠およびDR対応が必須要件となるAWSマルチアカウント構成のインフラアーキテクチャ設計、構築業務等を担当。具体的には下記。
+
+- Self-ManagedのGitLabの構築
+  - 当初はGitHubなどの外部Gitホスティングサービスの使用が許可されていなかったため。
+  - TerraformでIaC化。ホスト用サービスはEC2を選択。DBはRDSで外部化してデータはEBSで永続化。dev用とprod用の設定を分離して1コマンドでデプロイが完了する方式で構築。
+- PCI DSSの監査対象(in-scope)と非監査対象(out-of-scope)のセグメント分割などの監査負荷低減のための各種作業
+  - PCI DSS監査負荷低減のため。1つのAWSアカウントで全インフラを構築してしまうとin-scope用のインフラとout-of-scope用のインフラの分離が非常に難しくなるためAWSアカウント自体を複数に分割。
+  - PCI DSSのCDEに該当するデータはin-scope側のDynamoDBに保持。メインとなるデータはout-of-scope側のAuroraで保持。処理の依存関係が「in-scope => out-of-scope」の1方向のみになるように構成して監査負荷を十分に低減したセグメント分割を実現。
+  - in-scope側のインフラではNetwork FirewallとVPC Endpoint等を使用してアウトバウンド通信は全て特定の宛先のみを明示的に許可する方式で構成。
+  - Auroraへのアクセスは基本的に全てIAMデータベース認証を使用する方式を導入。
+    - 短時間の期限付きトークンによるアクセスになるためパスワード認証と比較すると監査負荷が大幅に低減される。
+    - 各アプリケーション専用のスキーマ作成・最小権限のDBユーザー作成を担当するLambdaとSQLも作成。
+- DR対応のために東京リージョン(アクティブ)と大阪リージョン(スタンバイ)の2リージョンで同一構成のインフラを構築。
+  - メインとなるRDBはAurora Global Database、データストアはDynamoDB Global Tablesを使用して東京=>大阪間のレプリケーションを設定。
+  - IaCは1ソースで東京リージョンと大阪リージョンの両方にインフラを構築できる仕組みを導入。
+- Terraformによるインフラのコード化。専用のシェルスクリプトを作成して環境別＆ユニット単位ごとにvalidate/plan/apply/destroyを柔軟に実行できる機能を実装。
+- in-scope => out-of-scopeのAWSアカウントをまたがるセキュアかつ低レイテンシーな一方向の通信をResource型PrivateLink(非NLB方式)を使用して実現。
+- インフラリソースのapply => データベースのマイグレーション => Dockerイメージのビルド => アプリケーションのデプロイまでの全ての処理を1コマンドで実行およびロールバックできる仕組みの構築。さらに各処理の個別実行を可能にすることで開発用AWSアカウントに対するインフラ系作業の効率化を実現。
+- 専用AWSアカウントと各環境用AWSアカウントのSecrets Managerの連携による秘匿情報の効率的な管理の仕組みを構築。
+- RDSやS3などのストレージは基本的にほぼ全てKMSのカスタマーマネージドキーにより暗号化。
+- ローカル環境/CI環境/AWS環境の全てでARM64アーキテクチャのDockerイメージを使用する方式に統一。
+- Lambdaによるデータベースのマイグレーション機能の構築(Lambdaの言語はGo)。
+- Fargate組み込みのBLUE/GREENデプロイ機能の導入。
+- Application Auto ScalingによるFargateのオートスケール機能の実装。
+- Distrolessイメージの導入とFargateコンテナのReadonly化によりコンテナへの脆弱性やマルウェア混入のリスクを大幅に低減。
+- shellcheck/hadolint/cfnlint等によるシェルスクリプト/Dockerfile/CloudFormationテンプレートの静的解析機能の導入。
+- ECS Execにより踏み台サーバ等を経由せずにFargate上のコンテナにログインできる仕組みの構築。管理用のFargateタスクを動的に起動してログインできるシェルスクリプトも作成。
+- CloudFrontのVPC Origin機能とALBを連携させてよりセキュアなエンドポイント構成を実現。
+  - CloudFrontはmTLSにも対応。
+- mTLS用のPrivate CAの構築
+  - CD用のIaCとはライフサイクルが異なるためCloudFormationで構築
+- CloudFront+S3によるCDNの構築。
+- CodePipelineとCodeBuildを使用したロールバック(特定の過去バージョンのアプリケーションをデプロイする)パイプラインの構築
+  - 既に他のチームメンバーが構築していたCD用のパイプラインのリソースを共通で使用する方式で構築。
+- IAM Identity Center(IIC)の導入により、IAMアクセスキーを使わずにAWS CLIやTerraformやそれらを含むシェルスクリプトを実行できる仕組みを構築。
+- AWSのマルチアカウントのセキュリティレベルの向上のために各種セキュリティサービスを導入(AWS Control Tower/Security Hub/CloudTrail/AWS Config/GuardDuty/Amazon Inspectorなど)
+  - 主にAWS Control Towerの有効化や初期設定を担当。各種セキュリティサービスの設定の詳細設計は協力会社様が主担当となり当方は設計のチェックを担当。
+- Datadogによる監視システムの導入。Datadog AWS Integrationの設定のIaC化、Datadog AgentとFireLens(fluentbit)によるFargateの詳細メトリクスとログの転送設定を実装。Terraformによるダッシュボードやモニター(アラート)のIaC化の雛形作成作業も担当。
+
+【特記事項】パブリッククラウドのみ(非オンプレミス)でPCI DSS準拠の決済サービスのインフラを構築した例は非常に希少で恐らく日本では初。
+
+【発揮したバリュー】GitLab Self-managedの構築とIaC化、PCI DSS準拠のインフラ設計とin-scope/out-of-scopeの適切な分割など、インフラおよびDevSecOps周りの作業を当初の半年程度はほぼ一人で担当。金融系案件のため制約が大きくセキュリティ面の要求も非常に厳しい中で、当初の計画にほぼ即したスケジュールでのローンチに大きく貢献。
 
 ### スポットワーカー向け各種サービスの認証/認可基盤(ID基盤)の設計とインフラ構築【Go/AWS/OAuth2/OIDC】(2024年〜現在)
 

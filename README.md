@@ -56,6 +56,10 @@ VPC | GCS | Cloud Functions | GCE | GKE(Kubernetes) | Cloud Run | GAE/SE(Standar
 
 GitHub | GitHub Actions | BitBucket(Stash) | CircleCI | Wercker | Datadog | Sentry | NewRelic | TreasureData | DeployGate | TestFlight
 
+### 生成AIツール
+
+Claude Code | ChatGPT
+
 ### その他
 
 Terraform | Spinnaker | Envoy | Docker | Xen | Jenkins | Fluentd | Capistrano | Chef | nginx | unicorn | Apache | Tomcat | Gulp | Webpack | Pug | SASS | Mecab | Zabbix | munin | Elasticsearch | Kibana | Algoria | RabbitMQ | LDAP | LVS | BIND | DHCP | IIS | Active Directory | DirectShow | Sharepoint Server | Exchage Server
